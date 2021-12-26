@@ -1,0 +1,470 @@
+.container {
+	max-width: 1352px;
+	min-width: 320px;
+	padding-left: 36px;
+	padding-right: 36px;
+	margin: 0 auto;
+  @media (max-width: 992px) {
+    & {
+      padding-left: 72px;
+      padding-right: 72px;
+    }
+  }
+  @media (max-width: 767px) {
+    & {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+}
+
+.title {
+	font-weight: normal;
+	font-size: 32px;
+	line-height: 100%;
+	color: #333;
+	@media (max-width: 576px) {
+		max-width: 212px;
+		font-size: 24px;
+		line-height: 100%;
+	}
+}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 100%;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  background-color: #F7F7F7;
+  border: 1px solid #f7f7f7;
+  border-radius: 10px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 40px;
+  color: #333333;
+  padding-left: 18px;
+  padding-right: 18px;
+	transition: background-color .2s ease-in-out,
+							border-color .2s ease-in-out;
+  &::placeholder {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 40px;
+    color: #999999;
+  }
+	@media(hover:hover) {
+		&:hover {
+			background-color: $form-color-hover;
+		}
+	}
+	&:focus {
+		background-color: $form-color-focus;
+		border-color: $form-color-focus-border;
+	}
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  &__default {
+    opacity: 0;
+    position: absolute;
+    left: -1000%;
+    &.js-validate-error-field + .checkbox__custom {
+      border-color: #FF6972;
+    }
+    &:focus + .checkbox__custom {
+      border-color: #A65CF0;
+    }
+    &:checked + .checkbox__custom {
+      background-color: #A65CF0;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__custom {
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #999999;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 10px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url('../../../img/svg/check.svg') no-repeat center center / 9px 6px;
+      opacity: 0;
+      transition: opacity .2s ease-in-out;
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+    a {
+      color: #A65CF0;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+// dinamic
+.dinamic-btn1 {
+	transition: background-color .2s ease-in-out,
+							border-color .2s ease-in-out;
+		@media (hover: hover) {
+			&:hover:not(:active) {
+				background-color: $solidBtn-hover;
+			}
+		}
+		&:focus:not(:active) {
+			background-color: $solidBtn-hover;
+			border-color: $solidBtn-focus;
+		}
+		&:active {
+			transition: none;
+			background-color: $solidBtn-active;
+			border-color: $solidBtn-active;
+		}
+}
+
+.dinamic-btn2 {
+	transition: background-color .2s ease-in-out,
+							border-color .2s ease-in-out,
+							color .2s ease-in-out;
+		@media (hover: hover) {
+			&:hover:not(:active) {
+				background-color: $transparent-btn-hover;
+				color: #fff;
+			}
+		}
+		&:focus:not(:active) {
+			background-color: $transparent-btn-focus;
+			color: #fff;
+		}
+		&:active {
+			transition: none;
+			background-color: $transparent-btn-active;
+			border-color: $transparent-btn-active;
+			color: #fff;
+		}
+}
+
+.dinamic-arrowBtn {
+	transition: all .2s ease-in-out;
+	@media (hover: hover) {
+		&:hover:not(:active) {
+			svg {
+				path {
+					stroke: #fff;
+				}
+				circle {
+					fill: $hoverColor-arrowBtn;
+				}
+			}
+		}
+	}
+	&:focus:not(:active) {
+		svg {
+			path {
+				stroke: #fff;
+			}
+			circle {
+				fill: $focusColor-arrowBtn;
+			}
+		}
+	}
+	&:active {
+		svg {
+			path {
+				stroke: #fff;
+			}
+			circle {
+				fill: $actionColor-arrowBtn;
+				stroke: $actionColor-arrowBtn;
+			}
+		}
+	}
+}
+
+.dinamic-1,
+.dinamic-2 {
+	position: relative;
+	transition: color .2s ease-in-out,
+							background-color .2s ease-in-out;
+							
+		& > * {
+			position: relative;
+			z-index: 2;
+		}					
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -5px;
+			bottom: -1px;
+			left: -5px;
+			transition: opacity .2s ease-in-out;
+			opacity: 0;
+			z-index: -1;
+		}					
+}
+
+.dinamic-1 {
+	&::before {
+		background-color: $focusColor-1;
+	}
+		@media (hover:hover) {
+			&:hover {
+				color: $hoverColor-1;
+			}
+		}
+		&:focus:not(:active) {
+			color: $actionColor-1;
+			&::before {
+				opacity: 1;
+			}
+		}
+		&:active {
+			transition: none;
+			color: $actionColor-1 !important;
+		}
+}
+
+.dinamic-2 {
+	&::before {
+		background-color: $focusColor-2;
+	}
+		@media (hover:hover) {
+			&:hover {
+				color: $hoverColor-2;
+			}
+		}
+		&:focus:not(:active) {
+			&::before {
+				opacity: 1;
+			}
+		}
+		&:active {
+			transition: none;
+			color: $actionColor-2 !important;
+		}
+}
+
+.link-width-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 120%;
+  color: $link-width-arrow-color;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  svg {
+    margin-left: 5px;
+  }
+	@media (hover: hover) {
+		&:hover:not(:active) {
+      text-decoration-color: $link-width-arrow-color;
+			svg {
+				path {
+					stroke: #fff;
+				}
+				circle {
+					fill: $link-width-arrow-color;
+				}
+			}
+		}
+	}
+	&:focus:not(:active) {
+    text-decoration-color: $link-width-arrow-color;
+		svg {
+			path {
+				stroke: #fff;
+			}
+			circle {
+				fill: $link-width-arrow-focus;
+			}
+		}
+	}
+	&:active {
+    text-decoration-color: $link-width-arrow-active;
+    color: $link-width-arrow-active;
+		svg {
+			path {
+				stroke: #fff;
+			}
+			circle {
+				fill: $link-width-arrow-active;
+				stroke: $link-width-arrow-active;
+			}
+		}
+	}
+}
+// __________
+
+.star {
+	position: absolute;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 130%;
+	color: #FF862F;
+	padding-left: 22px;
+	background: url('../img/svg/star.svg') no-repeat left 1.5px / 16px 15px;
+	@media (max-width: 647px) {
+		& {
+			font-size: 12px;
+			background-size: 13px 12px;
+			padding-left: 18px;
+		}
+	}
+}
+
+.sale {
+  position: absolute;
+	min-width: 92px;
+	height: 34px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 14px;
+	padding-right: 29px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: #fff;
+  background: url('../../../img/svg/sale-bg.svg') no-repeat center / cover;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 72px 30px 30px;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+
+  &__sale {
+    top: 30px;
+    left: 0;
+  }
+
+  &__star {
+    top: 33px;
+    left: 30px;
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    height: 209px;
+    object-fit: contain;
+    margin-bottom: 16px;
+  }
+
+  &__subimg {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 230px;
+    height: 107px;
+  }
+
+  &__title {
+    margin-bottom: 23px;
+    max-width: 225px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 130%;
+    color: #333333;
+  }
+
+  &__price {
+    margin-bottom: 23px;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 130%;
+    color: #FF862F;
+  }
+
+  &__old-price {
+    margin-left: 30px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration-line: line-through;
+    color: #999999;
+  }
+
+  &__price--grey {
+    font-size: 16px;
+    line-height: 130%;
+    color: #666;
+  }
+
+  &__btn {
+    width: 128px;
+    height: 54px;
+    border-color: $transparent-btn;
+    color: $transparent-btn;
+  }
+}
+.user {
+	position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: $focusColor-user;
+			top: -3px;
+			right: -5px;
+			bottom: -1px;
+			left: -5px;
+			z-index: -1;
+			opacity: 0;
+		}
+		&:focus:not(:active){
+			&::after {
+				opacity: 1;
+			}
+			svg path{
+				fill: #fff;
+			}
+		}	
+		@media (hover: hover) {
+			&:hover:not(:focus) svg path{
+				fill: $hoverColor-user;
+			}
+		}
+		&:active{
+			svg path{
+				fill: $actionColor-user;
+			}
+		} 
+}

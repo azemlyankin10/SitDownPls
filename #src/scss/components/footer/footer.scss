@@ -1,0 +1,158 @@
+.footer {
+  background-color: #EAEAEA;
+  &__container {
+    display: flex;
+    padding-top: 26px;
+    padding-bottom: 24px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+
+  &__logo {
+    transition: transform .2s ease-in-out;
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+
+  &__right {
+    margin-left: auto;
+  }
+
+  &__copy {
+    padding-top: 5px;
+    padding-bottom: 6px;
+    background-color: #fff;
+    text-align: center;
+    color:  #999;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+}
+
+.social-btn {
+  display: flex;
+  flex-wrap: wrap;
+  &__btn {
+    position: relative;
+    display: block;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: $focusSocialBtn;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity .2s ease-in-out;
+    }
+    svg {
+      position: relative;
+    }
+    svg path {
+      transition: fill .2s ease-in-out;
+    }
+    @media (hover: hover) {
+      &:hover:not(:active) svg path {
+        fill: $hoverSocialBtn;
+      }
+    }
+    &:active svg path {
+      transition: none;
+      fill: $activSocialBtn;
+    }
+    &:focus:not(:active) {
+      &::before {
+        opacity: 1;
+      }
+      & svg path {
+        fill: #fff
+      }
+    }
+  }
+}
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  @include adaptiv-value(width, 844, 490, 1);
+  &__column {
+    position: relative;
+    &:nth-child(2) {
+      left: -17px;
+    }
+    &:nth-child(3) {
+      left: -16px;
+    }
+  }
+
+  &__name {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 100%;
+    color: #333;
+    margin-bottom: 3px;
+  }
+
+  &__link {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+    color: #999;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__left {
+      flex-direction: row;
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+  }
+
+  .footer-grid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    &__left {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__logo {
+      margin-bottom: 19px;
+    }
+  }
+
+  .footer-grid {
+    flex-wrap: wrap;
+    gap: 20px;
+    &__column {
+      max-width: 150px;
+      left: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+img {
+	width: 100%;
+}
+
+html {
+	font-family: OpenSans, sans-serif;
+	height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+
+.footer {
+	flex-shrink: 0;
+}
+
+@import "repeatClasses";
+
+@import "components/header/header";
+
+@import "components/main/main";
+
+@import "components/footer/footer";
