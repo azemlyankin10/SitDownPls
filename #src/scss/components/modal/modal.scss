@@ -1,0 +1,79 @@
+.detail-modal {
+  background: rgba(51, 51, 51, 0.3);
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.detail-modal__modalWindow {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: fixed;
+  @include adaptiv-value(height, 684, 250, 1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1280px;
+
+  @media(max-width: 768px) {
+
+
+  }
+}
+
+.detail__modalSwiper-main {
+  position: absolute;
+  max-width: 1065px;
+  height: 418px;
+  top: 50px;
+  img{
+    width: 100%;
+
+    @include adaptiv-value(height, 418, 100, 1);
+    object-fit: contain;
+  }
+}
+
+.detailCard__img-list-modalSwiper {
+  position: absolute;
+  height: 166px;
+  @include adaptiv-value(height, 166, 80, 1);
+  width: 100%;
+  bottom: 0;
+  background: #F7F7F7;
+  padding: 20px 51px;
+  
+}
+
+.detail-swiper-button-next,
+.detail-swiper-button-prev {
+  display: none;
+}
+
+@media(max-width: 992px) {
+  .detail-swiper-button-next {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .detail-swiper-button-prev {
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: 48%;
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+

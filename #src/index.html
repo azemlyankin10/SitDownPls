@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="./img/svg/favicon.svg" type="image/x-icon">
-		<link rel="stylesheet" href="./libs/normalize.css">
-		<link rel="stylesheet" href="./libs/choices.min.css">
-		<link rel="stylesheet" href="./libs/swiper.min.css">
-		<link rel="stylesheet" href="css/style.min.css">
-
-		<script defer src="./libs/choices.min.js"></script>
-		<script defer src="./libs/swiper-bundle.min.js"></script>
-		<script defer src="./libs/inputMask.min.js"></script>
-		<script defer src="./libs/just-validate.min.js"></script>
-		<script defer src="https://unpkg.com/@popperjs/core@2"></script>
-		<script defer src="https://unpkg.com/tippy.js@6"></script>
-		<script defer src="js/script.min.js"></script>
-		<title>SitDownPls</title>
-	</head>
+	@@include('_head.html')
 	<body>
 		@@include('_header.html')
 		<main class="main">
@@ -26,7 +9,7 @@
 					<div class="hero__swiper-wrapper swiper-wrapper">
 						<div class="hero__slide hero__slide--1 swiper-slide">
 							<h1 class="hero__title">
-								Скидка 15% на первую покупку
+								Скидка 15% на первую покупку
 							</h1>
 							<a href="#" class="hero__btn btn dinamic-btn1">
 								Получить!
@@ -193,170 +176,238 @@
 						Высокий рейтинг
 					</h2>
 					<ul class="rating__list">
-						<li class="rating__card card">
-							<span class="card__star star">
+						<li class="card-regular">
+							<span class="card-regular__star">
 								5,0
 							</span>
-							<div class="rating__img-wrap">
-								<img src="./img/rate-1.png" alt="ration-img" class="card__img rating__img">
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-1.png" alt="ration-img" class="card-regular__img">
 							</div>
-
-							<div class="rating__card-container">
-								<h3 class="card__title rating__card-title">
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
 									Диван кожаный “R-94”
 								</h3>
-								<span class="card__price card__price--grey">
+								<span class="card-regular__price">
 									94 990 руб
 								</span>
-								<a href="#" class="card__btn rating__card-btn btn dinamic-btn2">
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
 									Купить
 								</a>
 							</div>
 						</li>
-						<li class="rating__card card">
-							<span class="card__star star">
+						<li class="card-regular">
+							<span class="card-regular__star">
 								4,9
 							</span>
-							<div class="rating__img-wrap">
-								<img src="./img/rate-2.png" alt="ration-img" class="card__img rating__img">
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-2.png" alt="ration-img" class="card-regular__img">
 							</div>
-
-							<div class="rating__card-container">
-								<h3 class="card__title rating__card-title">
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
 									Диван апартековый “T-75”
 								</h3>
-								<span class="card__price card__price--grey">
+								<span class="card-regular__price">
 									69 990 руб
 								</span>
-								<a href="#" class="card__btn rating__card-btn btn dinamic-btn2">
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
 									Купить
 								</a>
 							</div>
 						</li>
-						<li class="rating__card card">
-							<span class="card__star star">
+						<li class="card-regular">
+							<span class="card-regular__star">
 								4,8
 							</span>
-							<div class="rating__img-wrap">
-								<img src="./img/rate-3.png" alt="ration-img" class="card__img rating__img">
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-3.png" alt="ration-img" class="card-regular__img">
 							</div>
-
-							<div class="rating__card-container">
-								<h3 class="card__title rating__card-title">
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
 									Диван тканевый “D-31”
 								</h3>
-								<span class="card__price card__price--grey">
+								<span class="card-regular__price">
 									28 490 руб
 								</span>
-								<a href="#" class="card__btn rating__card-btn btn dinamic-btn2">
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
 									Купить
 								</a>
 							</div>
 						</li>
-						<li class="rating__card card">
-							<span class="card__star star">
+						<li class="card-regular">
+							<span class="card-regular__star">
 								4,8
 							</span>
-							<div class="rating__img-wrap">
-								<img src="./img/rate-4.png" alt="ration-img" class="card__img rating__img">
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-4.png" alt="ration-img" class="card-regular__img">
 							</div>
-
-							<div class="rating__card-container">
-								<h3 class="card__title rating__card-title">
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
 									Диван велюровый “Y-68”
 								</h3>
-								<span class="card__price card__price--grey">
+								<span class="card-regular__price">
 									22 990 руб
 								</span>
-								<a href="#" class="card__btn rating__card-btn btn dinamic-btn2">
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
 									Купить
 								</a>
 							</div>
 						</li>
-						<li class="rating__card card">
-							<span class="card__star star">
+						<li class="card-regular">
+							<span class="card-regular__star">
 								4,8
 							</span>
-							<div class="rating__img-wrap">
-								<img src="./img/rate-5.png" alt="ration-img" class="card__img rating__img">
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-5.png" alt="ration-img" class="card-regular__img">
 							</div>
-
-							<div class="rating__card-container">
-								<h3 class="card__title rating__card-title">
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
 									Диван из шинила “W-95”
 								</h3>
-								<span class="card__price card__price--grey">
+								<span class="card-regular__price">
 									22 990 руб
 								</span>
-								<a href="#" class="card__btn rating__card-btn btn dinamic-btn2">
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
 									Купить
 								</a>
 							</div>
 						</li>
-						<li class="rating__card card">
-							<span class="card__star star">
+						<li class="card-regular">
+							<span class="card-regular__star">
 								4,8
 							</span>
-							<div class="rating__img-wrap">
-								<img src="./img/rate-6.png" alt="ration-img" class="card__img rating__img">
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-6.png" alt="ration-img" class="card-regular__img">
 							</div>
-
-							<div class="rating__card-container">
-								<h3 class="card__title rating__card-title">
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
 									Диван флоковый “G-41”
 								</h3>
-								<span class="card__price card__price--grey">
+								<span class="card-regular__price">
 									17 990 руб
 								</span>
-								<a href="#" class="card__btn rating__card-btn btn dinamic-btn2">
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
 									Купить
 								</a>
 							</div>
 						</li>
-						<li class="rating__card card">
-							<span class="card__star star">
+						<li class="card-regular">
+							<span class="card-regular__star">
 								4,8
 							</span>
-							<div class="rating__img-wrap">
-								<img src="./img/rate-7.png" alt="ration-img" class="card__img rating__img">
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-7.png" alt="ration-img" class="card-regular__img">
 							</div>
-			
-							<div class="rating__card-container">
-								<h3 class="card__title rating__card-title">
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
 									Диван шиниловый “V-43”
 								</h3>
-								<span class="card__price card__price--grey">
+								<span class="card-regular__price">
 									19 990 руб
 								</span>
-								<a href="#" class="card__btn rating__card-btn btn dinamic-btn2">
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
 									Купить
 								</a>
 							</div>
 						</li>
-						<li class="rating__card card">
-							<span class="card__star star">
+						<li class="card-regular">
+							<span class="card-regular__star">
 								4,7
 							</span>
-							<div class="rating__img-wrap">
-								<img src="./img/rate-8.png" alt="ration-img" class="card__img rating__img">
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-8.png" alt="ration-img" class="card-regular__img">
 							</div>
-
-							<div class="rating__card-container">
-								<h3 class="card__title rating__card-title">
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
 									Диван велюровый “S-99”
 								</h3>
-								<span class="card__price card__price--grey">
+								<span class="card-regular__price">
 									19 990 руб
 								</span>
-								<a href="#" class="card__btn rating__card-btn btn dinamic-btn2">
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
+									Купить
+								</a>
+							</div>
+						</li>
+						<li class="card-regular">
+							<span class="card-regular__star">
+								4,7
+							</span>
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-9.png" alt="ration-img" class="card-regular__img">
+							</div>
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
+									Диван из кожзама “F-85”
+								</h3>
+								<span class="card-regular__price">
+									26 990 руб
+								</span>
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
+									Купить
+								</a>
+							</div>
+						</li>
+						<li class="card-regular">
+							<span class="card-regular__star">
+								4,6
+							</span>
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-10.png" alt="ration-img" class="card-regular__img">
+							</div>
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
+									Диван флоковый “H-64”
+								</h3>
+								<span class="card-regular__price">
+									25 990 руб
+								</span>
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
+									Купить
+								</a>
+							</div>
+						</li>
+						<li class="card-regular">
+							<span class="card-regular__star">
+								4,6
+							</span>
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-11.png" alt="ration-img" class="card-regular__img">
+							</div>
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
+									Диван флоковый “H-58”
+								</h3>
+								<span class="card-regular__price">
+									23 990 руб
+								</span>
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
+									Купить
+								</a>
+							</div>
+						</li>
+						<li class="card-regular">
+							<span class="card-regular__star">
+								4,6
+							</span>
+							<div class="card-regular__img-wrap">
+								<img src="./img/rate-12.png" alt="ration-img" class="card-regular__img">
+							</div>
+							<div class="card-regular__container">
+								<h3 class="card-regular__title">
+									Диван из кожзама “R-43”
+								</h3>
+								<span class="card-regular__price">
+									33 990 руб
+								</span>
+								<a href="#" class="btn dinamic-btn2 card-regular__btn">
 									Купить
 								</a>
 							</div>
 						</li>
 					</ul>
-					<a href="#" class="rating__btn btn dinamic-btn1">
+					<button type="button" class="rating__btn btn dinamic-btn1">
 						Смотреть больше товаров
-					</a>
+					</button>
 				</div>
 			</section>
 			<section class="newColection">
@@ -616,7 +667,9 @@
 			</section>
 			<section class="main-form">
 				<div class="container main-form__container">
-					<form action="#" class="main-form__form">
+					<form action="mail.php" enctype="multipart/form-data" class="main-form__form" method="POST">
+						<input type="hidden" name="admin_email[]" value="for.azemlyankin@gmail.com">
+            <input type="hidden" name="form_subject" value="Тема письма">
 						<h2 class="main-form__title title">
 							Мы всегда вам рады!
 						</h2>

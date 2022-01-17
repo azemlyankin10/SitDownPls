@@ -46,10 +46,42 @@ body {
 	flex-shrink: 0;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.modalSuccess {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  height: 30px;
+  background-color: rgba(0, 128, 0, 0.678);
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+}
+
 @import "repeatClasses";
+@import "components/modal/buyInOneClick";
+@import "components/modal/modal";
 
 @import "components/header/header";
 
 @import "components/main/main";
+@import "components/catalog/catalog";
+@import "components/cardDetail/cardDetail";
+@import "components/cooperation/cooperation";
 
 @import "components/footer/footer";
