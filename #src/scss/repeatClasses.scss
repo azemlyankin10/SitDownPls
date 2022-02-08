@@ -37,7 +37,8 @@
 	background-color: transparent;
 	border: 2px solid transparent;
 	border-radius: 10px;
-	font-weight: bold;
+	font-weight: 600;
+	font-style: normal;
 	font-size: 16px;
 	line-height: 100%;
 }
@@ -298,8 +299,12 @@
   text-decoration-color: transparent;
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
+	transition: all .1s ease-in-out;
+
   svg {
     margin-left: 5px;
+		transition: all .1s ease-in-out;
+
   }
 	@media (hover: hover) {
 		&:hover:not(:active) {
@@ -444,8 +449,9 @@
   }
 
   &__btn {
+		overflow: hidden;
     width: 128px;
-    height: 54px;
+    min-height: 54px;
     border-color: $transparent-btn;
     color: $transparent-btn;
   }
@@ -582,7 +588,7 @@
 
 	&__btn {
 		width: 128px;
-    height: 54px;
+    min-height: 54px;
     border-color: #a65cf0;
     color: #a65cf0;
 		@media (max-width: 576px) {

@@ -1,24 +1,42 @@
 @import "choices";
 
+// body {
+//   max-width: 100%;
+//   overflow-x: hidden;
+// }
+
 .header {
+  // overflow-x: hidden;
   margin-bottom: 16px;
   position: relative;
-  &::before {
-    content: "";
+  height: 100%;
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   // bottom: 75%;
+  //   height: 25%;  
+  //   background-color: #F7F7F7;
+  //   z-index: -2;
+  // }
+
+  &__line {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 75%;
-    background-color: #F7F7F7;
     z-index: -2;
+    width: 100%;
+    top: 0;
+    // height: 30px;
+    background-color: #F7F7F7;
   }
+
   &__container {
     align-items: center;
     padding-top: 12px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-row-gap: 43px;
+    grid-row-gap: 42px;
     grid-template-areas: 
     "region region info-list info-list info-list info-list"
     "logo navigation navigation navigation navigation navigation"
@@ -66,7 +84,17 @@
 
   &__info-list {
     grid-area: info-list;
-    position: relative;
+    // position: relative;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   z-index: -2;
+    //   left: -10000%;
+    //   right: -10000%;
+    //   top: -18px;
+    //   bottom: -18px;
+    //   background-color: #F7F7F7;
+    // }
   }
 
   &__logo {
@@ -110,7 +138,7 @@
   &__search-input {
     height: 100%;
     width: 100%;
-    background-color: transparent;
+    background-color: #F7F7F7;
     border: none;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -258,35 +286,46 @@
 
 @media (max-width: 1200px) {
   .header {
-    &::before {
-      top: 22%;
-      bottom: 59%;
+
+    &__line {
+      top: 58px;
     }
-  &__container {
-    padding-top: 14px;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: 
-    "region region region region region region"
-    "info-list info-list info-list info-list info-list user"
-    "logo navigation navigation navigation navigation navigation"
-    "form form form form form form";
-    grid-row-gap: 44px;
-    & > *:nth-child(1) {
-      margin-bottom: -20px;
+
+    &__container {
+      padding-top: 14px;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas: 
+      "region region region region region region"
+      "info-list info-list info-list info-list info-list user"
+      "logo navigation navigation navigation navigation navigation"
+      "form form form form form form";
+      grid-row-gap: 44px;
+      & > *:nth-child(1) {
+        margin-bottom: -20px;
+      }
     }
-  }
 
-  &__phone {
-    margin-left: auto;
-  }
+    &__phone {
+      margin-left: auto;
+    }
 
-  &__navigation {
-    @include adaptiv-value(min-width, 982, 100, 1);
-  }
+    // &__info-list {
+    //   &::before {
+    //     content: "";
+    //     left: 0;
+    //     right: 0;
+    //     // top: -18px;
+    //     // bottom: -18px;
+    //   }
+    // }
 
-  &__user-group {
-    margin-top: 4px;
-  }
+    &__navigation {
+      @include adaptiv-value(min-width, 982, 100, 1);
+    }
+
+    &__user-group {
+      margin-top: 4px;
+    }
   }
 
   .header-list {
@@ -302,10 +341,10 @@
 @media (max-width: 992px) {
   .header {
     margin-bottom: 9px;
-    &::before {
-      top: 21%;
-      bottom: 62%;
-    }
+    // &::before {
+    //   top: 21%;
+    //   bottom: 62%;
+    // }
 
 		&__container {
       padding-top: 14px;
@@ -429,9 +468,9 @@
 @media (max-width: 576px) {
   .header {
     margin-bottom: 27px;
-    &::before {
+
+    &__line {
       top: 0;
-      bottom: 85%;
     }
 
     &__container {
