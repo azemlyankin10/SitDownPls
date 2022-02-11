@@ -1,34 +1,25 @@
 @import "choices";
 
-// body {
-//   max-width: 100%;
-//   overflow-x: hidden;
-// }
-
 .header {
-  // overflow-x: hidden;
   margin-bottom: 16px;
   position: relative;
   height: 100%;
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   // bottom: 75%;
-  //   height: 25%;  
-  //   background-color: #F7F7F7;
-  //   z-index: -2;
-  // }
 
-  &__line {
-    position: absolute;
-    z-index: -2;
-    width: 100%;
-    top: 0;
-    // height: 30px;
-    background-color: #F7F7F7;
+  &__top {
+    grid-area: header-top;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      left: calc((100% - 100vw) / 2);
+      right: calc((100% - 100vw) / 2);
+      top: -14px;
+      bottom: -11px;
+      background-color: #F7F7F7;
+    }
   }
 
   &__container {
@@ -38,13 +29,13 @@
     grid-template-columns: repeat(6, 1fr);
     grid-row-gap: 42px;
     grid-template-areas: 
-    "region region info-list info-list info-list info-list"
+    "header-top header-top header-top header-top header-top header-top"
     "logo navigation navigation navigation navigation navigation"
     "form form form form form user";
   }
 
   &__contacts {
-    grid-area: region;
+    margin-right: auto;
     display: flex;
     align-items: center;
     .choices {
@@ -82,19 +73,8 @@
       }
   }
 
-  &__info-list {
-    grid-area: info-list;
-    // position: relative;
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   z-index: -2;
-    //   left: -10000%;
-    //   right: -10000%;
-    //   top: -18px;
-    //   bottom: -18px;
-    //   background-color: #F7F7F7;
-    // }
+  .window-large {
+    display: none;
   }
 
   &__logo {
@@ -287,37 +267,42 @@
 @media (max-width: 1200px) {
   .header {
 
-    &__line {
-      top: 58px;
+    &__top {
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+
+      &::before {
+        top: 42px;
+        bottom: -9px;
+        left: -36px;
+        right: -36px;
+      }
+    }
+
+    .window-large {
+      display: block;
+    }
+
+    .window-el {
+      display: none;
+    }
+
+    &__contacts {
+      width: 100%;
+      justify-content: space-between;
     }
 
     &__container {
-      padding-top: 14px;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-areas: 
-      "region region region region region region"
-      "info-list info-list info-list info-list info-list user"
-      "logo navigation navigation navigation navigation navigation"
-      "form form form form form form";
-      grid-row-gap: 44px;
-      & > *:nth-child(1) {
-        margin-bottom: -20px;
-      }
+      padding-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      grid-row-gap: 41px;
     }
 
     &__phone {
       margin-left: auto;
     }
-
-    // &__info-list {
-    //   &::before {
-    //     content: "";
-    //     left: 0;
-    //     right: 0;
-    //     // top: -18px;
-    //     // bottom: -18px;
-    //   }
-    // }
 
     &__navigation {
       @include adaptiv-value(min-width, 982, 100, 1);
@@ -326,44 +311,65 @@
     &__user-group {
       margin-top: 4px;
     }
+
+    &__form-wrap {
+      width: 100%;
+    }
+
+    &__user-group>:not(:last-child) {
+      margin-right: 20px;
+  }
   }
 
   .header-list {
-    justify-content: start;
+    max-width: 100% !important;
     &__elem {
       &:not(:last-child) {
-        @include adaptiv-value(margin-right, 93, 1, 1);
+        @include adaptiv-value(margin-right, 94, 1, 1);
       }
+      
     }
   }
 }
 
 @media (max-width: 992px) {
   .header {
-    margin-bottom: 9px;
-    // &::before {
-    //   top: 21%;
-    //   bottom: 62%;
-    // }
+    margin-bottom: 11px;
+
+    &__top {
+      gap: 30px;
+      order: 1;
+      &::before {
+        top: 42px;
+        bottom: -16px;
+        left: -72px;
+        right: -72px;
+      }
+    }
+
+    .window-large {
+      display: none;
+    }
+
+    .window-el {
+      display: block;
+    }
 
 		&__container {
-      padding-top: 14px;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: 
-      "region region region"
-      "info-list info-list info-list"  
-      "navigation logo user"
-      "form form form";
-      grid-row-gap: 48px;
-      & > *:nth-child(1) {
-        margin-bottom: -19px;
-      }
+      justify-content: space-between;
+      grid-row-gap: 45px;
 		}
 
 		&__logo {
       position: relative;
-      left: 13px;
+      left: 37px;
+      order: 3;
+      margin-right: 0;
 		}
+
+    &__user-group {
+      order: 4;
+    }
 
     &__burger {
       position: relative;
@@ -376,19 +382,23 @@
     }
 
 		&__navigation {
+      order: 2;
       margin-left: 0;
       min-width: 0;
 		}
 
 		&__form-wrap {
+      order: 5;
       position: relative;
       top: -6px;
 		}
   }
 
   .header-list {
+    width: 100%;
     justify-content: space-between;
     &__elem {
+      margin: 0;
       &:not(:last-child) {
         @include adaptiv-value(margin-right, 15, 1, 1);
       }
@@ -432,6 +442,7 @@
     }
 
     &__list {
+      justify-content: space-between;
       padding-top: 80px;
       display: inline-grid;
       justify-content: start;
@@ -454,6 +465,15 @@
 
 @media (max-width: 767px) {
 
+  .header {
+    &__top {
+      &::before {
+        left: -12px;
+        right: -12px;
+      }
+    }
+  }
+
   .nav {
     &__wrap {
       padding-left: 12px;
@@ -467,24 +487,36 @@
 
 @media (max-width: 576px) {
   .header {
-    margin-bottom: 27px;
-
-    &__line {
+    margin-bottom: 18px;
+    &::before {
+      content: "";
+      position: absolute;
       top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background-color: #F7F7F7;
+    }
+
+    &__top {
+      width: 100%;
+      order: 2;
+      &::before {
+        display: none;
+      }
+    }
+
+    .choices {
+      margin-right: auto;
     }
 
     &__container {
-     display: flex;
-     flex-wrap: wrap;
-     grid-row-gap: 0;
-      & > *:nth-child(1) {
-        margin-bottom: 0;
-      }
+      padding-top: 13px;
+      grid-row-gap: 0;
 		}
 
     &__contacts {
       flex-wrap: wrap;
-      order: 2;
       width: 100%;
     }
 
@@ -507,6 +539,9 @@
 
     &__info-list {
       display: none;
+      &::before {
+        display: none;
+      }
     }
 
     &__form-wrap {

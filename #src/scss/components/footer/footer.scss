@@ -154,10 +154,11 @@
 
   .footer-grid {
     flex-wrap: wrap;
-    gap: 25px;
+    column-gap: 9px;
+    row-gap: 24px;
     padding-right: 8px;
     &__column {
-      max-width: 150px;
+      width: 134px;
       left: 0 !important;
       &:last-child {
         margin-left: -5px;

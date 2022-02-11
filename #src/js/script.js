@@ -16,12 +16,12 @@ ratingBtn.addEventListener('click', () => {
   }
 })
 
-//header line
-const height = document.querySelector('.header__info-list').getBoundingClientRect().height
-console.log(height);
-const line = document.querySelector('.header__line')
-line.style.height = `${height + 32}px`
+// //header line
+// const height = document.querySelector('.header__info-list').getBoundingClientRect().height
+// console.log(height);
+// const line = document.querySelector('.header__line')
+// line.style.height = `${height + 32}px`
 
-if(window.innerWidth < 567) {
-  line.style.height = '50px'
-}
+// if(window.innerWidth < 567) {
+//   line.style.height = '50px'
+// }
