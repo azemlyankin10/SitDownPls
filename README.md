@@ -1,8 +1,7 @@
 # SitDownPls
 https://www.figma.com/file/vMS4izXO8LM76ykBPEn5tC/sdp.ru-(Copy) - layout
 
-1. initialization - gulp
-2. main page - /
-3. catalog page - /catalog.html
-4. card page - /card.html
+1. main page - https://sit-down-pls.vercel.app/catalog.html
+2. catalog page - https://sit-down-pls.vercel.app/catalog.html
+3. card page - https://sit-down-pls.vercel.app/card.html
 
